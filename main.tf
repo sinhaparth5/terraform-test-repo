@@ -14,7 +14,7 @@ resource "null_resource" "ssh_into_instance" {
     connection {
       type        = "ssh"
       user        = "root"
-      private_key = file("C:/Users/ParthSinha/.ssh/test-inst/id_rsa")
+      private_key = file("~/.ssh/test-inst/id_rsa")
       host        = "74.220.23.80"
     }
   }
