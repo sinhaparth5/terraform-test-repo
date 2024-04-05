@@ -1,3 +1,5 @@
+variable "user" {}
+
 resource "null_resource" "ssh_into_instance" {
   # Use a null resource to execute the SSH command
   triggers = {
@@ -13,7 +15,7 @@ resource "null_resource" "ssh_into_instance" {
 
     connection {
       type        = "ssh"
-      user        = "root"
+      user        = var.user
       private_key = file("~/.ssh/test-inst/id_rsa")
       host        = "74.220.23.80"
     }
